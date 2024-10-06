@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize('briandemo', '***', '*******', {
-  host: 'localhost', // Use service name from docker-compose.yml
+  host: 'localhost', 
   dialect: 'mysql',
 });
 
@@ -20,7 +20,7 @@ async function testConnection(retries = 5) {
   console.error('Unable to connect to the database after multiple retries.');
 }
 
-sequelize.sync({ force: false })
+sequelize.sync({ force: true })
   .then(() => {
     console.log('Database synchronized successfully');
     testConnection();
