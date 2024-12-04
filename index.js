@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use('/demo', router)
 
+// function to listen to server
 app.listen(PORT,() => {
   console.log(`Server running on port ${PORT}`);
 })
